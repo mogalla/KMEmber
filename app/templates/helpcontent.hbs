@@ -1,0 +1,14 @@
+<div class="kc-left-menu col-md-2 col-sm-2">
+	<div class="category-select">
+		{{kc-dropdown items=nav selected=category action="disciplineChanged" }}
+	</div>
+	<div class="nav">	
+		{{kc-nav tree=nav allitems=nav selected=category action="topicChanged"}}
+	</div>
+</div>
+<div class="kc-content col-md-10 col-sm-10">
+	{{kc-tabs tabs=tabs action="tabChanged"}}
+	<div class="kc-content-list">
+		{{kc-content-list content=displayedcontent source=null}}
+	</div>
+</div>

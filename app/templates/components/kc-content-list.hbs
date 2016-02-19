@@ -1,0 +1,28 @@
+<div class="content-container">
+
+<div class="left-list-pane">
+	{{#unless content.length}}
+		<div>No content found</div>
+	{{/unless}}
+	{{#each content as |item|}}
+		<div class="item hitarea {{if item.isselected "active"}}">
+			{{#if item.isselected}}
+				<div class="active bg"></div>
+			{{else}}
+				<div class="bg"></div>
+			{{/if}}
+			<div class="item-content">
+				<div class="title" {{action 'showContent' item on='click' }}>{{item.title}}</div>
+				<div class="description">{{item.description}}</div>
+			</div>	
+			
+		</div>
+	{{/each}}
+</div>
+<div class="frame-separator"></div>
+<div class="right-display-pane">
+{{#if source}}
+	<iframe width='98%' height='600px' frameborder='0' src='{{source}}&action=embedview&Embed=1'></iframe>
+{{/if}}
+</div>
+</div>

@@ -1,0 +1,10 @@
+ 
+<div class="dropdown hitarea" {{action "revealHideOptions" on "click"}}>
+	<div class="selected option spectra-text">{{selected.label}}</div>
+	<div class="arrow"></div>
+</div>
+<div class="ddl-options {{if reveal "reveal" "hide"}} ">
+	{{#each items as |item|}}
+		<div class="option" {{action "optionSelected" item on "click"}}>{{item.label}}</div>
+	{{/each}}
+</div>

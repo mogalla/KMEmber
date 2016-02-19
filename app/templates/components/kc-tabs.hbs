@@ -1,0 +1,7 @@
+<div class="tabs">
+	<ul class="nav nav-pills">
+		{{#each tabs as |tab|}}
+			<li class="tab {{tab.isactive}}" ><a href="#" {{action "tabChanged" tab on="click"}}>{{tab.label}} ({{tab.contentlength}})</a></li>
+		{{/each}}
+	</ul>
+</div>

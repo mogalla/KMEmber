@@ -1,0 +1,15 @@
+<!-- Input to this component will be the menu tree structure -->
+
+{{#each selected.children as |item|}}
+	<div class="kc-menu-option level-{{item.level}} ">
+		<div class="menu kc-menu-level-{{item.level}} {{item.isactive}}">
+			<div class="hitarea icon-{{item.icon}}" {{action 'topicChanged' item on='click' }}>{{item.label}}</div>
+		</div>
+		{{#if item.children.length}}
+			<div class="submenu {{item.isRevealed}}">
+				{{kc-nav tree=item.children itemSelected="topicChanged" allitems=tree selected=item}}
+			</div>	
+		{{/if}}
+	</div>
+{{/each}}
+
